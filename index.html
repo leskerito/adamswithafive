@@ -3,7 +3,89 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="favicon.ico" />
+    <script src="script.js" defer></script>
     <title>(archives)</title>
   </head>
-  <body></body>
+  <body>
+    <h1>never going back</h1>
+    <div>
+      <div class="folder-button" id="archives" onclick="openFolder('archives')">
+        <img src="assets/images/mainfolder.png" />archives
+      </div>
+      <div
+        class="folder-button"
+        id="highlights"
+        onclick="openFolder('highlights')"
+      >
+        <img src="assets/images/highlightsfolder.png" />highlights
+      </div>
+      <div class="folder-button" id="bsides" onclick="openFolder('bsides')">
+        <img src="assets/images/bsidesfolder.png" />b-sides
+      </div>
+      <div class="folder-button" id="playlist">
+        <img src="assets/images/playlistfile.png" /><a
+          href="https://open.spotify.com/playlist/09X6L6fD0iQa9pFtlhne8Y?si=d22452d3fc0a43e7&pt=a002e18b16ac6310c50763c58446bd93"
+          target="_blank"
+          >playlist.lnk</a
+        >
+      </div>
+    </div>
+    <!-- FOLDERS -->
+
+    <!-- Archives folder -->
+    <div id="archivesFolder" class="folder">
+      <div class="folder-bar">
+        <span class="folder-button minimize">min</span>
+        <span class="folder-button maximize">max</span>
+        <span class="folder-button close">close</span>
+      </div>
+      <div class="folder-content">
+        <div class="folder-item link">
+          <a href="">everything</a>
+        </div>
+        <div class="folder-item link">
+          <a href="https://ffm.to/j5opqod">most of it</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Highlights folder -->
+    <div id="highlightsFolder" class="folder">
+      <div class="folder-bar">
+        <span class="folder-button minimize">min</span>
+        <span class="folder-button maximize">max</span>
+        <span class="folder-button close">close</span>
+      </div>
+      <div class="folder-content">
+        <div class="folder-item link">
+          <a href="">the background</a>
+        </div>
+        <div class="folder-item link">
+          <a href="https://genius.com/adam5-archives-lyrics">the words</a>
+        </div>
+      </div>
+    </div>
+    <!-- B-sides folder -->
+    <div id="bsidesFolder" class="folder">
+      <div class="folder-bar">
+        <span class="folder-button minimize">min</span>
+        <span class="folder-button maximize">max</span>
+        <span class="folder-button close">close</span>
+      </div>
+      <div class="folder-content">
+        <div class="folder-item link">
+          <a href="">the meanings</a>
+        </div>
+        <div class="folder-item link">
+          <a href="">the stripped version</a>
+        </div>
+        <div class="folder-item link">
+          <a href="">the story</a>
+        </div>
+      </div>
+    </div>
+    <!-- END FOLDERS -->
+  </body>
 </html>
