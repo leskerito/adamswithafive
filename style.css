@@ -4,18 +4,36 @@
 
 body {
   background-color: #226666;
-  font-family: "Courier New", Courier, monospace;
-  font-weight: bold;
 }
 a {
   text-decoration: none;
 }
+
+#archives {
+
+}
+
+#highlights {
+
+}
+
+#bsides{
+
+}
+
+#playlist {
+
+}
+/* Folder window style*/
+
 .folder {
+  display: table;
   position: absolute;
+  display: none;
   opacity: 0;
-  width: 60%;
+  width: 40%;
   top: 30%;
-  left :20%;
+  left :30%;
   min-height: 30vh;
   background: #f5f5f5;
   border: 2px solid #ccc;
@@ -39,28 +57,10 @@ a {
   background-color: blue;
 }
 
-#archives {
-
-}
-
-#highlights {
-
-}
-
-#bsides{
-
-}
-
-#playlist {
-
-}
-
-.folder p{
-  margin: 0;
-  padding: 0;
-  border: 1px solid red;
-  text-align: center;
-  vertical-align: middle;
+.folder-content {
+  display: table;
+  margin: 2%;
+  border-spacing: 10px;
 }
 
 .folder.show {
@@ -68,15 +68,20 @@ a {
   opacity: 1;
 }
 
-.folder-bar {
-  background-color: blue;
-  text-align: right;
-}
 
 .folder-item {
+  display: table-cell;
   border: #226666 1px solid;
-  width: 10%;
-  display: inline-block;
+  margin: 5px;
+  width: auto;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.folder-item p{
+  margin: 0;
+  padding: 0;
+  border: 1px solid red;
   text-align: center;
   vertical-align: middle;
 }
@@ -85,6 +90,24 @@ a {
   text-decoration: underline;
 }
 
-.folder-content {
-  display: inline;
+img { 
+    image-rendering: optimizeSpeed;             /* STOP SMOOTHING, GIVE ME SPEED  */
+    image-rendering: -moz-crisp-edges;          /* Firefox                        */
+    image-rendering: -o-crisp-edges;            /* Opera                          */
+    image-rendering: -webkit-optimize-contrast; /* Chrome (and eventually Safari) */
+    image-rendering: pixelated;                 /* Universal support since 2021   */
+    image-rendering: optimize-contrast;         /* CSS3 Proposed                  */
+    -ms-interpolation-mode: nearest-neighbor;   /* IE8+                           */
+
+}
+
+@media screen and (max-width: 600px) {
+  .folder {
+    width: 90%;
+    left: 5%;
+    top: 10%;
+  }
+  .folder-button {
+    max-width: 80px;
+  }
 }

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" href="favicon.ico" />
+    <link rel="stylesheet" href="https://unpkg.com/98.css" />
     <script src="script.js" defer></script>
     <title>(archives)</title>
   </head>
@@ -43,16 +44,18 @@
 
     <!-- Archives folder -->
     <div id="archivesFolder" class="folder">
-      <div class="folder-bar">
-        <span class="folder-title"></span>
-        <span class="folder-button minimize">min</span>
-        <span class="folder-button maximize">max</span>
-        <span class="folder-button close">close</span>
+      <div class="title-bar">
+        <div class="title-bar-text">archives</div>
+        <div class="title-bar-controls">
+          <button class="minimize" aria-label="Minimize" disabled></button>
+          <button class="maximize" aria-label="Maximize" disabled></button>
+          <button class="close" aria-label="Close"></button>
+        </div>
       </div>
       <div class="folder-content">
         <div id="lyric" class="folder-item link">
-          <a href="https://www.youtube.com/watch?v=dpSek4-ev8g" target="_blank"
-            ><img src="assets/images/lyricfile.png" />
+          <a href="https://www.youtube.com/watch?v=dpSek4-ev8g" target="_blank">
+            <img src="assets/images/lyricfile.png" />
             <p>everything</p>
           </a>
         </div>
@@ -67,11 +70,13 @@
 
     <!-- Highlights folder -->
     <div id="highlightsFolder" class="folder">
-      <div class="folder-bar">
-        <span class="folder-title"></span>
-        <span class="folder-button minimize">min</span>
-        <span class="folder-button maximize">max</span>
-        <span class="folder-button close">close</span>
+      <div class="title-bar">
+        <div class="title-bar-text">highlights</div>
+        <div class="title-bar-controls">
+          <button class="minimize" aria-label="Minimize" disabled></button>
+          <button class="maximize" aria-label="Maximize" disabled></button>
+          <button class="close" aria-label="Close"></button>
+        </div>
       </div>
       <div class="folder-content">
         <div class="folder-item link">
@@ -92,11 +97,13 @@
     </div>
     <!-- B-sides folder -->
     <div id="bsidesFolder" class="folder">
-      <div class="folder-bar">
-        <span class="folder-title"></span>
-        <span class="folder-button minimize">min</span>
-        <span class="folder-button maximize">max</span>
-        <span class="folder-button close">close</span>
+      <div class="title-bar">
+        <div class="title-bar-text">b-sides</div>
+        <div class="title-bar-controls">
+          <button class="minimize" aria-label="Minimize" disabled></button>
+          <button class="maximize" aria-label="Maximize" disabled></button>
+          <button class="close" aria-label="Close"></button>
+        </div>
       </div>
       <div class="folder-content">
         <div class="folder-item link">

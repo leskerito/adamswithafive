@@ -1,5 +1,10 @@
 var closeButtons = document.getElementsByClassName("close");
+var minimizeButtons = document.getElementsByClassName("Minimize");
+var maximizeButtons = document.getElementsByClassName("Maximize");
+var titles = document.getElementsByClassName("title-bar-text");
+var folderButtons = document.getElementsByClassName("folder-button");
 
+console.log(closeButtons);
 function isMobile() {
   return (
     /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) ||
@@ -7,19 +12,26 @@ function isMobile() {
   );
 }
 
-for (var i = 0; i < closeButtons.length; i++) {
-  closeButtons[i].addEventListener("click", function () {
-    const allFolders = document.querySelectorAll(".folder");
-    allFolders.forEach((f) => f.classList.remove("show"));
-  });
-}
+function createWindowButtons() {
+  for (var i = 0; i < closeButtons.length; i++) {
+    closeButtons[i].addEventListener("click", function () {
+      const allFolders = document.querySelectorAll(".folder");
+      allFolders.forEach((f) => f.classList.remove("show"));
+    });
+    titles[i].innerHTML = titles[i].parentElement.parentElement.id.replace(
+      "Folder",
+      ""
+    );
 
-console.log("Is mobile: " + isMobile());
+    if (isMobile()) {
+      minimizeButtons[i].style.display = "none";
+      maximizeButtons[i].style.display = "none";
+    }
+  }
+}
+createWindowButtons();
 
 var folderBars = document.getElementsByClassName("folder-bar");
-for (var i = 0; i < folderBars.length; i++) {
-  console.log(folderBars[i].parentElement.id);
-}
 
 function openFolder(folder) {
   const allFolders = document.querySelectorAll(".folder");
