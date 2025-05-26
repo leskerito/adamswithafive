@@ -3,41 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
     <link rel="icon" href="favicon.ico" />
     <link rel="stylesheet" href="https://unpkg.com/98.css" />
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
     <title>(archives)</title>
   </head>
-  <body>
+  <body class="desktop">
     <div id="folders">
-      <div
-        class="folder-button"
-        id="archives"
-        ondblclick="openFolder('archives')"
-      >
+      <div class="button desktopIcon" id="archives">
         <img src="assets/images/mainfolder.png" />
         <p>archives</p>
       </div>
-      <div
-        class="folder-button"
-        id="highlights"
-        ondblclick="openFolder('highlights')"
-      >
+
+      <div class="button desktopIcon" id="highlights">
         <img src="assets/images/highlightsfolder.png" />
         <p>highlights</p>
       </div>
-      <div class="folder-button" id="bsides" ondblclick="openFolder('bsides')">
+
+      <div class="button desktopIcon" id="bsides">
         <img src="assets/images/bsidesfolder.png" />
         <p>b-sides</p>
       </div>
-      <div class="folder-button" id="playlist">
-        <a
-          href="https://open.spotify.com/playlist/09X6L6fD0iQa9pFtlhne8Y?si=d22452d3fc0a43e7&pt=a002e18b16ac6310c50763c58446bd93"
-          target="_blank"
-          ><img src="assets/images/playlistfile.png" />
-          <p>playlist.lnk</p>
-        </a>
+
+      <div
+        class="button"
+        id="https://open.spotify.com/playlist/09X6L6fD0iQa9pFtlhne8Y?si=d22452d3fc0a43e7&pt=a002e18b16ac6310c50763c58446bd93"
+      >
+        <img src="assets/images/playlistfile.png" />
+        <p>playlist.lnk</p>
       </div>
     </div>
     <!-- FOLDERS -->
@@ -53,17 +47,16 @@
         </div>
       </div>
       <div class="folder-content">
-        <div id="lyric" class="folder-item link">
-          <a href="https://www.youtube.com/watch?v=dpSek4-ev8g" target="_blank">
-            <img src="assets/images/lyricfile.png" />
-            <p>everything</p>
-          </a>
+        <div
+          id="https://www.youtube.com/watch?v=dpSek4-ev8g"
+          class="folder-item button link"
+        >
+          <img src="assets/images/lyricfile.png" />
+          <p>everything</p>
         </div>
-        <div class="folder-item link">
-          <a href="https://ffm.to/j5opqod" target="_blank"
-            ><img src="assets/images/ffmfile.png" />
-            <p>most of it</p>
-          </a>
+        <div class="folder-item button link" id="https://ffm.to/j5opqod">
+          <img src="assets/images/ffmfile.png" />
+          <p>most of it</p>
         </div>
       </div>
     </div>
@@ -79,15 +72,14 @@
         </div>
       </div>
       <div class="folder-content">
-        <div class="folder-item link">
-          <a
-            href="https://soundcloud.com/whoisadamfive/archives-instrumental"
-            target="_blank"
-            ><img src="assets/images/scfile.png" />
-            <p>the background</p>
-          </a>
+        <div
+          class="folder-item button link"
+          id="https://soundcloud.com/whoisadamfive/archives-instrumental"
+        >
+          <img src="assets/images/scfile.png" />
+          <p>the background</p>
         </div>
-        <div class="folder-item link">
+        <div class="folder-item button link">
           <a href="https://genius.com/adam5-archives-lyrics" target="_blank"
             ><img src="assets/images/geniusfile.png" />
             <p>the words</p>
@@ -106,19 +98,19 @@
         </div>
       </div>
       <div class="folder-content">
-        <div class="folder-item link">
+        <div class="folder-item button link">
           <a href=""
             ><img src="assets/images/explainfile.png" />
             <p>the meanings</p>
           </a>
         </div>
-        <div class="folder-item link">
+        <div class="folder-item button link">
           <a href=""
             ><img src="assets/images/acousticfile.png" />
             <p>the stripped version</p>
           </a>
         </div>
-        <div class="folder-item link">
+        <div class="folder-item button link">
           <a href=""
             ><img src="assets/images/journalfile.png" />
             <p>the journal</p>

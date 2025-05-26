@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  font: url('/assets/fonts/ms-sans-serif.otf')
 }
 
 body {
@@ -7,24 +8,10 @@ body {
 }
 a {
   text-decoration: none;
+  color: black;
 }
 
-#archives {
-
-}
-
-#highlights {
-
-}
-
-#bsides{
-
-}
-
-#playlist {
-
-}
-/* Folder window style*/
+/*Window style*/
 
 .folder {
   display: table;
@@ -36,24 +23,28 @@ a {
   left :30%;
   min-height: 30vh;
   background: #f5f5f5;
-  border: 2px solid #ccc;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+  border: 1px solid #ccc;
+  box-shadow: 12px 13px 0px -8px rgba(0,0,0,1);
+  -webkit-box-shadow: 12px 13px 0px -8px rgba(0,0,0,1);
+  -moz-box-shadow: 12px 13px 0px -8px rgba(0,0,0,1);
+  resize: both;
+  overflow: auto;
 }
 
-.folder-button{
+.button{
   max-width: 100px;
   text-align: center;
-  color: #ccc;
+  color: #f9f9f9;
 }
 
-.folder-button > img {
+.button > img {
   width: 100%;
 } 
-.folder-button:hover > img {
+.button:hover > img {
   opacity: 0.8;
 }
 
-.folder-button:focus{
+.button:focus{
   background-color: blue;
 }
 
@@ -71,34 +62,42 @@ a {
 
 .folder-item {
   display: table-cell;
-  border: #226666 1px solid;
   margin: 5px;
   width: auto;
   text-align: center;
   vertical-align: middle;
+  color: black
 }
 
 .folder-item p{
   margin: 0;
   padding: 0;
-  border: 1px solid red;
   text-align: center;
   vertical-align: middle;
 }
 
-.folder-button:hover {
+.button:hover {
   text-decoration: underline;
 }
 
-img { 
-    image-rendering: optimizeSpeed;             /* STOP SMOOTHING, GIVE ME SPEED  */
-    image-rendering: -moz-crisp-edges;          /* Firefox                        */
-    image-rendering: -o-crisp-edges;            /* Opera                          */
-    image-rendering: -webkit-optimize-contrast; /* Chrome (and eventually Safari) */
-    image-rendering: pixelated;                 /* Universal support since 2021   */
-    image-rendering: optimize-contrast;         /* CSS3 Proposed                  */
-    -ms-interpolation-mode: nearest-neighbor;   /* IE8+                           */
+.active {
+  background-color: #026cae;
+  opacity: 0.8;
+  color: #f9f9f9;
+}
 
+img { 
+  image-rendering: optimizeSpeed;             /* STOP SMOOTHING, GIVE ME SPEED  */
+  image-rendering: -moz-crisp-edges;          /* Firefox                        */
+  image-rendering: -o-crisp-edges;            /* Opera                          */
+  image-rendering: -webkit-optimize-contrast; /* Chrome (and eventually Safari) */
+  image-rendering: pixelated;                 /* Universal support since 2021   */
+  image-rendering: optimize-contrast;         /* CSS3 Proposed                  */
+  -ms-interpolation-mode: nearest-neighbor;   /* IE8+                           */
+}
+
+.title-bar {
+  width: 100%;
 }
 
 @media screen and (max-width: 600px) {
@@ -107,7 +106,7 @@ img {
     left: 5%;
     top: 10%;
   }
-  .folder-button {
+  .button {
     max-width: 80px;
   }
 }
