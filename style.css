@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-color: #226666;
   font-family: "Courier New", Courier, monospace;
@@ -6,47 +10,81 @@ body {
 a {
   text-decoration: none;
 }
-a:hover {
-  text-decoration: underline;
-}
 .folder {
-  display: none;
-  opacity: 0;
   position: absolute;
-  top: 20%;
-  left: 20%;
+  opacity: 0;
   width: 60%;
+  top: 30%;
+  left :20%;
+  min-height: 30vh;
   background: #f5f5f5;
   border: 2px solid #ccc;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
-  z-index: 10;
-  padding: 1rem;
-  border-radius: 4px;
+}
+
+.folder-button{
+  max-width: 100px;
+  text-align: center;
+  color: #ccc;
+}
+
+.folder-button > img {
+  width: 100%;
+} 
+.folder-button:hover > img {
+  opacity: 0.8;
+}
+
+.folder-button:focus{
+  background-color: blue;
+}
+
+#archives {
+
+}
+
+#highlights {
+
+}
+
+#bsides{
+
+}
+
+#playlist {
+
+}
+
+.folder p{
+  margin: 0;
+  padding: 0;
+  border: 1px solid red;
+  text-align: center;
+  vertical-align: middle;
 }
 
 .folder.show {
   display: block;
   opacity: 1;
 }
-  .folder-button {
-    font-size: 20px;
-    padding: 10px;
-    border-radius: 5px;
-    background-color: #226666;
-    border: 2px solid #ffffff;
-    transition: background-color 0.3s, color 0.3s;
-    display: inline-block;
-  }
 
-  .folder-button:hover {
-    text-decoration: underline;
-    cursor: pointer;
-  }
+.folder-bar {
+  background-color: blue;
+  text-align: right;
+}
 
-  button {
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    text-align: center;
-  }
+.folder-item {
+  border: #226666 1px solid;
+  width: 10%;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+}
 
+.folder-button:hover {
+  text-decoration: underline;
+}
+
+.folder-content {
+  display: inline;
+}
