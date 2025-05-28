@@ -1,6 +1,8 @@
 * {
   box-sizing: border-box;
-  font: url('/assets/fonts/ms-sans-serif.otf')
+  font: url("/assets/fonts/ms-sans-serif.otf");
+  font-weight: bold;
+  font-size: 13px;
 }
 
 body {
@@ -13,6 +15,15 @@ a {
 
 /*Window style*/
 
+.folders {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
 .folder {
   display: table;
   position: absolute;
@@ -20,31 +31,36 @@ a {
   opacity: 0;
   width: 40%;
   top: 30%;
-  left :30%;
+  left: 30%;
   min-height: 30vh;
   background: #f5f5f5;
   border: 1px solid #ccc;
-  box-shadow: 12px 13px 0px -8px rgba(0,0,0,1);
-  -webkit-box-shadow: 12px 13px 0px -8px rgba(0,0,0,1);
-  -moz-box-shadow: 12px 13px 0px -8px rgba(0,0,0,1);
+  box-shadow: 12px 13px 0px -8px rgba(0, 0, 0, 1);
+  -webkit-box-shadow: 12px 13px 0px -8px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 12px 13px 0px -8px rgba(0, 0, 0, 1);
   resize: both;
   overflow: auto;
 }
 
-.button{
+.button {
+  min-width: 80px;
   max-width: 100px;
   text-align: center;
   color: #f9f9f9;
 }
 
+.link {
+  min-width: 100px;
+}
+
 .button > img {
   width: 100%;
-} 
+}
 .button:hover > img {
   opacity: 0.8;
 }
 
-.button:focus{
+.button:focus {
   background-color: blue;
 }
 
@@ -59,17 +75,16 @@ a {
   opacity: 1;
 }
 
-
 .folder-item {
   display: table-cell;
   margin: 5px;
   width: auto;
   text-align: center;
   vertical-align: middle;
-  color: black
+  color: black;
 }
 
-.folder-item p{
+.folder-item p {
   margin: 0;
   padding: 0;
   text-align: center;
@@ -77,7 +92,8 @@ a {
 }
 
 .button:hover {
-  text-decoration: underline;
+  opacity: 0.8;
+  font-weight: bolder;
 }
 
 .active {
@@ -86,14 +102,14 @@ a {
   color: #f9f9f9;
 }
 
-img { 
-  image-rendering: optimizeSpeed;             /* STOP SMOOTHING, GIVE ME SPEED  */
-  image-rendering: -moz-crisp-edges;          /* Firefox                        */
-  image-rendering: -o-crisp-edges;            /* Opera                          */
+img {
+  image-rendering: optimizeSpeed; /* STOP SMOOTHING, GIVE ME SPEED  */
+  image-rendering: -moz-crisp-edges; /* Firefox                        */
+  image-rendering: -o-crisp-edges; /* Opera                          */
   image-rendering: -webkit-optimize-contrast; /* Chrome (and eventually Safari) */
-  image-rendering: pixelated;                 /* Universal support since 2021   */
-  image-rendering: optimize-contrast;         /* CSS3 Proposed                  */
-  -ms-interpolation-mode: nearest-neighbor;   /* IE8+                           */
+  image-rendering: pixelated; /* Universal support since 2021   */
+  image-rendering: optimize-contrast; /* CSS3 Proposed                  */
+  -ms-interpolation-mode: nearest-neighbor; /* IE8+                           */
 }
 
 .title-bar {
@@ -102,11 +118,23 @@ img {
 
 @media screen and (max-width: 600px) {
   .folder {
-    width: 90%;
-    left: 5%;
-    top: 10%;
+    position: absolute;
+    top: 40vh;
+    left: 0;
+    height: 60vh;
+    width: 100vw;
   }
   .button {
     max-width: 80px;
+  }
+
+  .folders {
+    overflow: hidden;
+    position: absolute;
+    top: 10vh;
+  }
+
+  .desktopIcon {
+    width: 100vw;
   }
 }

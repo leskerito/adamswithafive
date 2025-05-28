@@ -30,6 +30,17 @@ function createWindowButtons() {
   }
 }
 
+function clicks(event) {
+  buttons.forEach((button) => {
+    button.classList.remove("active");
+  });
+  if (event.target.classList.contains("button")) {
+    event.target.classList.add("active");
+  } else if (event.target.parentElement.classList.contains("button")) {
+    event.target.parentElement.classList.add("active");
+  }
+}
+
 //If the browser is mobile, will allow us to click once to open a link or folder
 //If the browser is desktop, will allow us to click once to select and double click to open a link or folder
 if (isMobile()) {
@@ -43,16 +54,11 @@ if (isMobile()) {
     });
   });
 } else {
+  // Add click listener to the body in order to remove focus from the buttons/folder items
+  document.body.addEventListener("click", clicks);
+
   buttons.forEach((button) => {
-    button.addEventListener("click", (event) => {
-      button.focus();
-      button.classList.add("active");
-      buttons.forEach((b) => {
-        if (b !== button) {
-          b.classList.remove("active");
-        }
-      });
-    });
+    button.addEventListener("click", clicks);
 
     button.addEventListener("dblclick", (event) => {
       if (button.classList.contains("desktopIcon")) {
@@ -62,6 +68,15 @@ if (isMobile()) {
       }
     });
   });
+}
+
+// Add event listeners to folder items for opening folders
+function handleClick(event) {
+  if (!event.target.classList.contains("button")) {
+    buttons.forEach((button) => {
+      button.classList.remove("active");
+    });
+  }
 }
 
 // Call the function to create window buttons
