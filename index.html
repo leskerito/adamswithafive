@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://unpkg.com/98.css" />
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
+    <script src="flipJournal.js" defer></script>
     <title>adam'5</title>
 
     <meta name="description" content="creating, endlessly" />
@@ -140,18 +141,30 @@
 
     <!--JOURNAL MODAL-->
     <div id="journalModal">
-      <button class="previous journalButton" onclick="flipJournal(-1)">
-        &#10094;
-      </button>
-
-      <div class="journalContent">
-        <img src="assets/journal/1.png" alt="Journal Page 1" />
-        <div class="pageCount">1/11</div>
+      <div class="title-bar">
+        <div class="title-bar-text">the journal</div>
+        <div class="title-bar-controls">
+          <button class="minimize" aria-label="Minimize" disabled></button>
+          <button class="maximize" aria-label="Maximize" disabled></button>
+          <button
+            class="closeJournal"
+            onclick="closeJournal()"
+            aria-label="Close"
+          ></button>
+        </div>
       </div>
+      <div class="journalButtons">
+        <button class="previous journalButton" onclick="flipJournal(-1)">
+          &#10094;
+        </button>
 
-      <button class="next journalButton" onclick="flipJournal(1)">
-        &#10095;
-      </button>
+        <button class="next journalButton" onclick="flipJournal(1)">
+          &#10095;
+        </button>
+      </div>
+      <div class="journalContent">
+        <img id="currentPage" src="assets/journal/1.png" alt="Journal Page 1" />
+      </div>
     </div>
   </body>
 </html>
