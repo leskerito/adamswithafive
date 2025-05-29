@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
     <title>adam'5</title>
+
     <meta name="description" content="creating, endlessly" />
 
     <!-- Facebook Meta Tags -->
@@ -127,14 +128,30 @@
         </div>
         <div class="folder-item button link" id="">
           <img src="assets/images/acousticfile.png" />
-          <p>the stripped version</p>
+          <p>the acoustic</p>
         </div>
-        <div class="folder-item button link" id="">
+        <div class="folder-item button link" id="journal">
           <img src="assets/images/journalfile.png" />
           <p>the journal</p>
         </div>
       </div>
     </div>
     <!-- END FOLDERS -->
+
+    <!--JOURNAL MODAL-->
+    <div id="journalModal">
+      <button class="previous journalButton" onclick="flipJournal(-1)">
+        &#10094;
+      </button>
+
+      <div class="journalContent">
+        <img src="assets/journal/1.png" alt="Journal Page 1" />
+        <div class="pageCount">1/11</div>
+      </div>
+
+      <button class="next journalButton" onclick="flipJournal(1)">
+        &#10095;
+      </button>
+    </div>
   </body>
 </html>
