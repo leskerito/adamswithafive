@@ -104,6 +104,7 @@ function openFolder(folder) {
 function openJournal() {
   const journalModal = document.getElementById("journalModal");
   journalModal.classList.add("show");
+  journalModal.focus();
 }
 
 function closeJournal() {

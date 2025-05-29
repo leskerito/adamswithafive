@@ -4,6 +4,7 @@ let touchStartX = 0;
 let touchEndX = 0;
 let touchStartY = 0;
 let touchEndY = 0;
+const journal = document.querySelector("#journalModal");
 
 function flipJournal(direction) {
   currentPage += direction;
@@ -16,16 +17,22 @@ function flipJournal(direction) {
   image.src = `assets/journal/${currentPage}.png`;
 }
 
-if (isMobile()) {
-  const carousel = document.querySelector("#journalModal");
+function maximizeJournal() {
+  if (journal.classList.contains("fullscreen")) {
+    journal.classList.remove("fullscreen");
+  } else {
+    journal.classList.add("fullscreen");
+  }
+}
 
-  carousel.addEventListener("touchstart", (e) => {
+if (isMobile()) {
+  journal.addEventListener("touchstart", (e) => {
     e.preventDefault();
     touchStartX = e.changedTouches[0].screenX;
     touchStartY = e.changedTouches[0].screenY;
   });
 
-  carousel.addEventListener("touchend", (e) => {
+  journal.addEventListener("touchend", (e) => {
     e.preventDefault();
     touchEndX = e.changedTouches[0].screenX;
     touchEndY = e.changedTouches[0].screenY;
@@ -50,4 +57,26 @@ if (isMobile()) {
       closeJournal();
     }
   }
+} else {
+  journal.addEventListener("keydown", (e) => {
+    switch (e.key) {
+      case "ArrowLeft":
+        flipJournal(-1);
+        break;
+      case "ArrowRight":
+        flipJournal(1);
+        break;
+      case "Escape":
+        if (journal.classList.contains("fullscreen")) {
+          maximizeJournal();
+        } else {
+          closeJournal();
+        }
+        console.log(journalModal.classList);
+        break;
+      default:
+        console.log("Unhandled key:", e.key);
+        break;
+    }
+  });
 }

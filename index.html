@@ -140,12 +140,16 @@
     <!-- END FOLDERS -->
 
     <!--JOURNAL MODAL-->
-    <div id="journalModal">
+    <div id="journalModal" tabindex="0">
       <div class="title-bar">
         <div class="title-bar-text">the journal</div>
         <div class="title-bar-controls">
           <button class="minimize" aria-label="Minimize" disabled></button>
-          <button class="maximize" aria-label="Maximize" disabled></button>
+          <button
+            class="maximize journalMaximize"
+            aria-label="Maximize"
+            onclick="maximizeJournal()"
+          ></button>
           <button
             class="closeJournal"
             onclick="closeJournal()"
