@@ -48,6 +48,8 @@ if (isMobile()) {
     button.addEventListener("click", function () {
       if (button.classList.contains("desktopIcon")) {
         openFolder(button.id);
+      } else if (isJournal(button)) {
+        openJournal();
       } else {
         window.open(button.id, "_blank").focus();
       }
@@ -63,11 +65,17 @@ if (isMobile()) {
     button.addEventListener("dblclick", (event) => {
       if (button.classList.contains("desktopIcon")) {
         openFolder(button.id);
+      } else if (isJournal(button)) {
+        openJournal();
       } else {
         window.open(button.id, "_blank").focus();
       }
     });
   });
+}
+
+function isJournal(button) {
+  return button.id === "journal";
 }
 
 // Add event listeners to folder items for opening folders
@@ -91,4 +99,15 @@ function openFolder(folder) {
 
   const opened = document.getElementById(folder + "Folder");
   opened.classList.add("show");
+}
+
+function openJournal() {
+  const journalModal = document.getElementById("journalModal");
+  journalModal.classList.add("show");
+  journalModal.focus();
+}
+
+function closeJournal() {
+  const journalModal = document.getElementById("journalModal");
+  journalModal.classList.remove("show");
 }
